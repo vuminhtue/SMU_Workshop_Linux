@@ -1,5 +1,5 @@
 ---
-title: "Introduction"
+title: "File system"
 teaching: 0
 exercises: 0
 questions:
@@ -9,7 +9,30 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-FIXME
+Go have a cup of tea.
+
+> ## This is a slide
+> yada yada
+{: .slide}
+
+> ## This is another slide
+> 
+> > #include <stdio.h>
+> > int main (int arg, char* argv[]) {
+> >  printf ("Hello World!");
+> >  return 0;
+> > }
+> {: .language-bash}
+>
+{: .slide}
+
+> ## This is a challenge
+> > It is a question?
+>
+> > ## Solution
+> > It is a question
+> {: .solution}
+{: .challenge}
 
 {% include links.md %}
 
