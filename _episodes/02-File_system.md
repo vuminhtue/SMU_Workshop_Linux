@@ -23,7 +23,7 @@ Go have a cup of tea.
 > >  printf ("Hello World!");
 > >  return 0;
 > > }
-> {: .language-bash}
+> {: .language-c}
 >
 {: .slide}
 
