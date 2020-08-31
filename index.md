@@ -5,11 +5,11 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 ---
 
 > ## Instructor
-> - **Instructor**: Clemson Tigers
-> - **Office**: the Death Valley
-> - **Office Hours**: 24/7
-> - **Email**: tigers AT clemson DOT edu
-> - **Phone**: 123 456 7890
+> - **Instructor**: Grigori Yourganov
+> - **Office**: 2092 Barre Hall
+> - **Office Hours**: Wednesday Office-hours 8.30am – 11.30am
+> - **Email**: gyourga AT clemson DOT edu
+> - **Phone**: n/a
 {: .prereq}
 
 > ## Workshop Description
