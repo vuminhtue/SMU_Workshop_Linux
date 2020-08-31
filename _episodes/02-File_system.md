@@ -18,20 +18,22 @@ Go have a cup of tea.
 
 > ## This is another slide
 > 
-> > #include <stdio.h>
-> > int main (int arg, char* argv[]) {
-> >  printf ("Hello World!");
-> >  return 0;
-> > }
+> ~~~
+> #include <stdio.h>
+> int main (int arg, char* argv[]) {
+> printf ("Hello World!");
+> return 0;
+> }
+>  ~~~
 > {: .language-c}
 >
 {: .slide}
 
 > ## This is a challenge
-> > It is a question?
+> >Is the pope Catholic?
 >
 > > ## Solution
-> > It is a question
+> > Yes
 > {: .solution}
 {: .challenge}
 
