@@ -13,9 +13,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 {: .prereq}
 
 > ## Workshop Description
-> Course description goes here
-> 
-The workshop provides the introduction to the Linux Command Line Interface for researchers. Topics will include the file system, file/directory manipulations, redirection and piping, and basic scripting.
+> The workshop provides the introduction to the Linux Command Line Interface for researchers. Topics will include the file system, file/directory manipulations, redirection and piping, and basic scripting.
 {: .prereq}
 
 > ## Prerequisites
