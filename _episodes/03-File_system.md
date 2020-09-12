@@ -53,7 +53,7 @@ To understand what a "home directory" is,
 let's have a look at how the file system as a whole is organized.  
 On Palmetto, the filesystem looks something like this: 
 
-![The File System](../fig/filesystem.svg)
+![The File System](../fig/filesystem.png)
 
 At the top is the **root directory**
 that holds everything else.
