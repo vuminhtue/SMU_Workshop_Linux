@@ -80,11 +80,14 @@ We will mostly refer to the prompt as just `$`, i.e.,
 $
 ~~~
 
-In the figure below, MobaXterm also gives you a GUI browser of your home
-directory on Palmetto. For Mac OS and Linux terminal, you will only have the
-command line interface (CLI) to the right.
+Let's enter our first command! 
+Type the command `whoami`,
+then press the Enter key (sometimes marked Return) to send the command to the shell.
+The command's output is the ID of the current user.
 
-<img src="../fig/mobaxterm_4.png" alt="MobaXterm interface" style="height:350px">
+~~~
+$ whoami
+~~~
 
 
 ## Basic structure of the cluster
