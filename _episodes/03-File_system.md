@@ -41,28 +41,6 @@ Several commands are frequently used to create, inspect, rename, and delete file
 To start exploring them,
 let's open a shell window:
 
-Type the command `whoami`,
-then press the Enter key (sometimes marked Return) to send the command to the shell.
-The command's output is the ID of the current user,
-i.e.,
-it shows us who the shell thinks we are:
-
-~~~
-$ whoami
-~~~
-{: .bash}
-
-~~~
-nelle
-~~~
-{: .output}
-
-More specifically, when we type `whoami` the shell:
-
-1.  finds a program called `whoami`,
-2.  runs that program,
-3.  displays that program's output, then
-4.  displays a new prompt to tell us that it's ready for more commands.
 
 
 > ## Username Variation
