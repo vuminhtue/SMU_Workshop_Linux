@@ -21,9 +21,8 @@ This is known as a *remote login*.
 For Mac OS X, you can open the Terminal Application and run the following:
 
 ~~~
-$ ssh login.palmetto.clemson.edu
+ssh login.palmetto.clemson.edu
 ~~~
-{: .bash}
 
 For Windows, first you need to download and install
 [MobaXterm Home Edition](https://mobaxterm.mobatek.net/download.html).
@@ -63,7 +62,7 @@ and the following "prompt":
 ~~~
 [username@login001 ~]$
 ~~~
-{: .bash}
+
 
 The prompt in a bash shell usually
 consists of a dollar (`$`) sign,
@@ -80,7 +79,6 @@ We will mostly refer to the prompt as just `$`, i.e.,
 ~~~
 $
 ~~~
-{: .bash}
 
 In the figure below, MobaXterm also gives you a GUI browser of your home
 directory on Palmetto. For Mac OS and Linux terminal, you will only have the
@@ -99,17 +97,3 @@ It also has a few so-called "service" nodes,
 that are *not* meant for this purpose.
 Instead, they are meant to help users perform other actions
 such as transfering code and data to and from the cluster.
-
-The most important of these "service" nodes is
-the login node `user001`.
-The login node runs a "server" program
-that listens for remote logins.
-On our own machines, we run a "client" program
-(Secure Shell or `ssh`) that can talk to this server.
-Our client program passes our login credentials to this server,
-and if we are allowed to log in,
-the server runs a shell for us on the computer
-it is running on (`user0001`).
-Any commands that we enter into this shell
-are executed not by our own machines,
-but by `user0001`.
