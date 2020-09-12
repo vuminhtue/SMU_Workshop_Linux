@@ -21,58 +21,18 @@ keypoints:
 - "Nano is a very simple text editor: please use something else for real work."
 ---
 
-We now know how to explore files and directories,
-but how do we create them in the first place?
-Let's go back to our `data-shell` directory on the Desktop
-and use `ls -F` to see what it contains:
-
-~~~
-$ pwd
-~~~
-{: .bash}
-
-~~~
-/Users/nelle/Desktop/data-shell
-~~~
-{: .output}
-
-~~~
-$ ls -F
-~~~
-{: .bash}
-
-~~~
-creatures/  molecules/           pizza.cfg
-data/       north-pacific-gyre/  solar.pdf
-Desktop/    notes.txt            writing/
-~~~
-{: .output}
-
-Let's create a new directory called `thesis` using the command `mkdir thesis`
+Directories are created with the `mkdir` ("make directory") command. Let's create a new directory called `thesis` in our home directory, using the command `mkdir thesis`
 (which has no output):
 
 ~~~
+$ cd
 $ mkdir thesis
 ~~~
-{: .bash}
 
-As you might guess from its name,
-`mkdir` means "make directory".
 Since `thesis` is a relative path
 (i.e., doesn't have a leading slash),
-the new directory is created in the current working directory:
+the new directory is created in the current working directory. If you type `;s`, you should se it listed.
 
-~~~
-$ ls -F
-~~~
-{: .bash}
-
-~~~
-creatures/  north-pacific-gyre/  thesis/
-data/       notes.txt            writing/
-Desktop/    pizza.cfg
-molecules/  solar.pdf
-~~~
 {: .output}
 
 > ## Good Names for Files and Directories
@@ -107,7 +67,6 @@ However, there's nothing in it yet:
 ~~~
 $ ls -F thesis
 ~~~
-{: .bash}
 
 Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
@@ -116,7 +75,6 @@ then run a text editor called Nano to create a file called `draft.txt`:
 $ cd thesis
 $ nano draft.txt
 ~~~
-{: .bash}
 
 > ## Which Editor?
 >
