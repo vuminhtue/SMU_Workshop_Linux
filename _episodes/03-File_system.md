@@ -41,25 +41,6 @@ Several commands are frequently used to create, inspect, rename, and delete file
 To start exploring them,
 let's open a shell window:
 
-> ## Preparation Magic
->
-> If you type the command:
-> `PS1='$ '`
-> into your shell, your window should look like our example in this lesson.  
-> This isn't necessary to follow along (in fact, your prompt may have 
-> other helpful information you want to know about).  This is up to you!  
-{: .callout}
-
-~~~
-$
-~~~
-{: .bash}
-
-The dollar sign is a **prompt**, which shows us that the shell is waiting for input;
-your shell may use a different character as a prompt and may add information before 
-the prompt. When typing commands, either from these lessons or from other sources, 
-do not type the prompt, only the commands that follow it.
-
 Type the command `whoami`,
 then press the Enter key (sometimes marked Return) to send the command to the shell.
 The command's output is the ID of the current user,
