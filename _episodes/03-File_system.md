@@ -21,10 +21,7 @@ keypoints:
 - "`/` on its own is the root directory of the whole file system."
 - "A relative path specifies a location starting from the current location."
 - "An absolute path specifies a location from the root of the file system."
-- "Directory names in a path are separated with '/' on Unix, but '\\' on Windows."
 - "'..' means 'the directory above the current one'; '.' on its own means 'the current directory'."
-- "Most files' names are `something.extension`. The extension isn't required, and doesn't guarantee anything, but is normally used to indicate the type of data in the file."
-- "Most commands take options (flags) which begin with a '-'."
 ---
 
 The part of the operating system responsible for managing files and directories
@@ -88,6 +85,7 @@ which stands for "listing":
 ~~~
 $ ls
 ~~~
+{: .bash}
 
 ~~~
 Applications Documents    Library      Music        Public
@@ -95,7 +93,7 @@ Desktop      Downloads    Movies       Pictures
 ~~~
 {: .output}
 
-Your results might be completely different, depending on the ontents of your home directory. In fact, if you arejust starting to use Palmetto, your home directory might be empty.
+Your results might be completely different, depending on the ontents of your home directory. In fact, if you are just starting to use Palmetto, your home directory might be empty.
 
 
 `ls` prints the names of the files and directories in the current directory in 
@@ -107,6 +105,7 @@ which tells `ls` to add a trailing `/` to the names of directories:
 ~~~
 $ ls -F
 ~~~
+{: .bash}
 
 ~~~
 Applications/ Documents/    Library/      Music/        Public/
@@ -124,6 +123,7 @@ which doesn't exist.
 ~~~
 $ ls --help
 ~~~
+{: .bash}
 
 ~~~
 Usage: ls [OPTION]... [FILE]...
@@ -245,8 +245,8 @@ or available locally via: info '(coreutils) ls invocation'
 ~~~
 {: .output}
 
-Many bash commands, and programs that people have written that can be
-run from within bash, support a `--help` flag to display more
+Many Linux commands, and programs that people have written that can be
+run from within the shell, support a `--help` flag to display more
 information on how to use the commands or programs.
 
 For more information on how to use `ls` we can type `man ls`.
@@ -261,18 +261,20 @@ or try the "b" and spacebar keys to skip up and down by full page.
 Quit the `man` pages by typing "q".
 
 
-We can also use `ls` to see the contents of a different directory. Let's list the diretories of all the Palmetto users:  
+We can also use `ls` to see the contents of a different directory. Let's list the directories of all the Palmetto users (note that you cannot actually go inside other people's directories):  
 ~~~
 $ ls /home
 ~~~
+{: .bash}
 
-As we will discuss later, you can't see the *contents* of other people's directories. 
+Note that on Palmetto you cannot access other people's directories. 
 
 The next command we will discuss is `mkdir`, which creates a new directory. Let's create a directory with the name `linux_workshop`:
 
 ~~~
 $ mkdir linux_workshop
 ~~~
+{: .bash}
 
 Now, if you type `ls`, you should see `linux_workshop` lited among the contents of your home directory. 
 
@@ -282,11 +284,13 @@ our home directory. Let's enter the directory we have just created:
 ~~~
 $ cd linux_workshop
 ~~~
+{: .bash}
 
 Now, our current directory is `linux_workshop`:
 ~~~
 $ pwd
 ~~~
+{: .bash}
 
 ~~~
 /home/<your Palmetto username>/linux_workshop
@@ -301,6 +305,7 @@ that looks like this:
 ~~~
 $ cd ..
 ~~~
+{: .bash}
 
 `..` is a special directory name meaning
 "the directory containing this one",
@@ -312,6 +317,7 @@ if we run `pwd` after running `cd ..`, we're back in your home directory:
 ~~~
 $ pwd
 ~~~
+{: .bash}
 
 ~~~
 /home/<your Palmetto username>
@@ -324,6 +330,7 @@ to display it, we can give `ls` the `-a` flag:
 ~~~
 $ ls -F -a
 ~~~
+{: .bash}
 
 
 `-a` stands for "show all";
@@ -355,12 +362,14 @@ a directory?
 ~~~
 $ cd
 ~~~
+{: .bash}
 
 How can you check what happened?  `pwd` gives us the answer!  
 
 ~~~
 $ pwd
 ~~~
+{: .bash}
 
 ~~~
 /home/<your Palmetto username>
@@ -376,6 +385,7 @@ to move to `linux_workshop` in one step:
 ~~~
 $ cd /home/<your Palmetto username>/linux_workshop
 ~~~
+{: .bash}
 
 Check that we've moved to the right place by running `pwd`.  
 
