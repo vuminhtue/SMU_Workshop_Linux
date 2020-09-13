@@ -11,7 +11,7 @@ objectives:
 
 
 
-The Palmetto cluster is running the Linux operating system. An *operating system* is a special software that coordinates the computer's hardware and other software. Other popular operating systems are Windows and Mac OS. 
+The Palmetto cluster is running the Linux operating system (more specifically, [CentOS 8](https://www.centos.org/). An *operating system* is a special software that coordinates the computer's hardware and other software. Other popular operating systems are Windows and Mac OS. 
 
 This workshop will teach you how to use the Linux command line interface. For this purpose, we will use the *terminal* software, such as MobaXTerm or Putty (on Windows machines) or Terminal (on Mac and Linux machines). We will use the terminal sowtare to enter the Linux commands which will be immediately executed by Palmetto. The terminal does not use graphical features (like windows or buttons) and the use of the mouse is very limited. This is the most direct way to interact with Palmetto; there is an option of graphical user interface (whih we will not cover in today's workshop), but this way is indirect because the graphical interaction needs to be translated into Linux commands by the operating system. Another advantage of using the Linux commands is *scripting*, where we can order the oprerating system to perform some ations repeatedly instead of cliking the mouse each time we need to perform the action.    
 
