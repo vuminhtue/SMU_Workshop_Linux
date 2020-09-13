@@ -11,5 +11,4 @@ A word of warning: Linux is case-sensitive and typo-sensitive. Commands need to 
 
 Now, let's log into Palmetto.
 
-{% include links.md %}
 
