@@ -6,14 +6,6 @@ questions:
 - "How can I access the Palmetto cluster from my local machine?"
 ---
 
-In this workshop,
-we will use a command-line interface to interact with
-the Palmetto cluster, which runs the Linux operating system
-specifically, [CentOS](https://www.centos.org/).
-However, note that these commands can be used on
-any *Unix-based* operating system,
-including Mac OS X.
-
 To be able to run commands on the Palmetto from your own machine,
 you will first need to be able to log in to the Palmetto.
 This is known as a *remote login*.
@@ -21,8 +13,9 @@ This is known as a *remote login*.
 For Mac OS X, you can open the Terminal Application and run the following:
 
 ~~~
-ssh login.palmetto.clemson.edu
+ssh <your Palmetto username>@login.palmetto.clemson.edu
 ~~~
+{: .bash}
 
 For Windows, first you need to download and install
 [MobaXterm Home Edition](https://mobaxterm.mobatek.net/download.html).
@@ -62,6 +55,7 @@ and the following "prompt":
 ~~~
 [username@login001 ~]$
 ~~~
+{: .bash}
 
 
 The prompt in a bash shell usually
@@ -79,6 +73,7 @@ We will mostly refer to the prompt as just `$`, i.e.,
 ~~~
 $
 ~~~
+{: .bash}
 
 Let's enter our first command! 
 Type the command `whoami`,
@@ -88,6 +83,7 @@ The command's output is the ID of the current user.
 ~~~
 $ whoami
 ~~~
+{: .bash}
 
 
 ## Basic structure of the cluster
