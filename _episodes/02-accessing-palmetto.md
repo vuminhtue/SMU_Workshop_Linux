@@ -12,7 +12,7 @@ To be able to run commands on the Palmetto from your own machine,
 you will first need to be able to log in to the Palmetto.
 This is known as a *remote login*.
 
-For Mac OS X, you can open the Terminal Application (which is usually in Applications -> Utilities folder) and run the following:
+For Mac OS X, you can open the Terminal Application (which is usually in Applications &rarr; Utilities folder) and run the following:
 
 ~~~
 ssh <your Palmetto username>@login.palmetto.clemson.edu
