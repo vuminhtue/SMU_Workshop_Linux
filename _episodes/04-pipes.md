@@ -26,21 +26,55 @@ keypoints:
 Now that we know a few basic commands,
 we can finally look at the shell's most powerful feature:
 the ease with which it lets us combine existing programs in new ways.
-We'll start with a directory called `molecules`
-that contains six files describing some simple organic molecules.
-The `.pdb` extension indicates that these files are in Protein Data Bank format,
-a simple text format that specifies the type and position of each atom in the molecule.
+
+For training purposes, let's use some data from the Software Carpentry workshop. We will download them using the GitHub interface and the `git clone` command. Let's put them inside the `linux_workshop` folder.
 
 ~~~
-$ ls molecules
+$ cd ~/linux_workshop
+$ git clone https://github.com/silshack/pipes.git
 ~~~
-{: .bash}
+
+This will create a folder called `pipes`, which will contain a subfolder called `molecules`. Lets's see its contents.
+
+~~~
+$ cd pipes
+$ cd molecules
+$ ls
+~~~
 
 ~~~
 cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 ~~~
 {: .output}
+
+
+The folder `molecules` contains six files describing some simple organic molecules.
+The `.pdb` extension indicates that these files are in Protein Data Bank format,
+a simple text format that specifies the type and position of each atom in the molecule.
+
+We can print out the contents of these files using the `cat` command. Let's print out `methane.pdb`:
+
+~~~
+$ cat methane.pdb
+~~~
+
+~~~
+COMPND      METHANE
+AUTHOR      DAVE WOODCOCK  95 12 18
+ATOM      1  C           1       0.257  -0.363   0.000  1.00  0.00
+ATOM      2  H           1       0.257   0.727   0.000  1.00  0.00
+ATOM      3  H           1       0.771  -0.727   0.890  1.00  0.00
+ATOM      4  H           1       0.771  -0.727  -0.890  1.00  0.00
+ATOM      5  H           1      -0.771  -0.727   0.000  1.00  0.00
+TER       6              1
+END
+~~~
+{: .output}
+
+This is a pretty short file (because methane is a simple molecule). If you want to print a longer file which takes several pages of output, you can use the command `less` instead of `cat`.
+
+Now, we can count 
 
 Let's go into that directory with `cd` and run the command `wc *.pdb`.
 `wc` is the "word count" command:
