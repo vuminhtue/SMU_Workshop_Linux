@@ -4,6 +4,8 @@ teaching: 15
 exercises: 0
 questions:
 - "How can I access the Palmetto cluster from my local machine?"
+objectives:
+- "Logging into Palmetto from a local Mac / Windows computer."
 ---
 
 To be able to run commands on the Palmetto from your own machine,
