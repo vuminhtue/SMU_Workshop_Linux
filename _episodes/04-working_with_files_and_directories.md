@@ -247,10 +247,9 @@ rather than going into the `thesis` directory and running `nano` on `draft.txt` 
 ~~~
 $ pwd
 ~~~
-{: .bash}
 
 ~~~
-/Users/nelle
+/home/<your Palmetto username>
 ~~~
 {: .output}
 
@@ -362,7 +361,6 @@ and then run that same `ls` again.
 $ rm quotes.txt
 $ ls quotes.txt thesis/quotations.txt
 ~~~
-{: .bash}
 
 ~~~
 ls: cannot access quotes.txt: No such file or directory
