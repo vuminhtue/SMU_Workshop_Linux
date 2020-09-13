@@ -6,7 +6,6 @@ questions:
 - "How can I create, copy, and delete files and directories?"
 - "How can I edit files?"
 objectives:
-- "Create a directory hierarchy that matches a given diagram."
 - "Create files in that hierarchy using an editor or by copying and renaming existing files."
 - "Display the contents of a directory using the command line."
 - "Delete specified files and/or directories."
@@ -16,9 +15,7 @@ keypoints:
 - "`mv old new` moves (renames) a file or directory."
 - "`rm path` removes (deletes) a file."
 - "`rmdir path` removes (deletes) an empty directory."
-- "Use of the Control key may be described in many ways, including `Ctrl-X`, `Control-X`, and `^X`."
 - "The shell does not have a trash bin: once something is deleted, it's really gone."
-- "Nano is a very simple text editor: please use something else for real work."
 ---
 
 Directories are created with the `mkdir` ("make directory") command. Let's create a new directory called `thesis` in our home directory, using the command `mkdir thesis`
@@ -28,12 +25,11 @@ Directories are created with the `mkdir` ("make directory") command. Let's creat
 $ cd
 $ mkdir thesis
 ~~~
+{: .bash}
 
 Since `thesis` is a relative path
 (i.e., doesn't have a leading slash),
-the new directory is created in the current working directory. If you type `;s`, you should se it listed.
-
-{: .output}
+the new directory is created in the current working directory. If you type `ls`, you should see it listed.
 
 > ## Good Names for Files and Directories
 >
@@ -48,15 +44,13 @@ the new directory is created in the current working directory. If you type `;s`,
 >    is better to avoid them on name of files and directories.
 >    You can use `-` or `_` instead of whitespace.
 >
-> 2. Don't begin the name with `-`.
 >
 >    Commands treat names starting with `-` as options.
 >
-> 3. Stay with letters, numbers, `.`, `-` and `_`.
+> 2. Stay with letters, numbers, `.`, `-` and `_`.
 >
->    May of the others characters have an special meaning on the command line
->    that we will learn during this lesson. Some will only make your command not work at all
->    but for some of them you can even lose some data.
+> 3. Don't begin the name with `-`.
+>   
 >
 > If you need to refer to names of files or directories that have whitespace
 > or another non-alphanumeric character you should put quotes around the name.
@@ -67,6 +61,8 @@ However, there's nothing in it yet:
 ~~~
 $ ls -F thesis
 ~~~
+{: .bash}
+
 
 Let's change our working directory to `thesis` using `cd`,
 then run a text editor called Nano to create a file called `draft.txt`:
@@ -75,6 +71,7 @@ then run a text editor called Nano to create a file called `draft.txt`:
 $ cd thesis
 $ nano draft.txt
 ~~~
+{: .bash}
 
 > ## Which Editor?
 >
@@ -160,8 +157,8 @@ $ ls
 
 > ## Deleting Is Forever
 >
-> The Unix shell doesn't have a trash bin that we can recover deleted
-> files from (though most graphical interfaces to Unix do).  Instead,
+> The Linux shell doesn't have a trash bin that we can recover deleted
+> files from (though most graphical interfaces to Linux do).  Instead,
 > when we delete files, they are unhooked from the file system so that
 > their storage space on disk can be recycled. Tools for finding and
 > recovering deleted files do exist, but there's no guarantee they'll
@@ -178,7 +175,7 @@ $ pwd
 {: .bash}
 
 ~~~
-/Users/nelle/thesis
+/home/<your Palmetto username>/thesis
 ~~~
 {: .output}
 
@@ -247,6 +244,7 @@ rather than going into the `thesis` directory and running `nano` on `draft.txt` 
 ~~~
 $ pwd
 ~~~
+{: .bash}
 
 ~~~
 /home/<your Palmetto username>
@@ -265,9 +263,7 @@ draft.txt
 ~~~
 {: .output}
 
-`draft.txt` isn't a particularly informative name,
-so let's change the file's name using `mv`,
-which is short for "move":
+To rename the file, we can use the `mv` command, which stands for "move". The same command is used to move a file from one folder to another. Let's rename `draft.txt` to `quotes.txt`: 
 
 ~~~
 $ mv thesis/draft.txt thesis/quotes.txt
@@ -339,7 +335,7 @@ quotes.txt
 The `cp` command works very much like `mv`,
 except it copies a file instead of moving it.
 We can check that it did the right thing using `ls`
-with two paths as parameters --- like most Unix commands,
+with two paths as parameters --- like most Linux commands,
 `ls` can be given thousands of paths at once:
 
 ~~~
@@ -361,6 +357,7 @@ and then run that same `ls` again.
 $ rm quotes.txt
 $ ls quotes.txt thesis/quotations.txt
 ~~~
+{: .bash}
 
 ~~~
 ls: cannot access quotes.txt: No such file or directory
@@ -456,31 +453,6 @@ but it does find the copy in `thesis` that we didn't delete.
 > {: .output}
 {: .challenge}
 
-> ## Copy with Multiple Filenames
->
-> What does `cp` do when given several filenames and a directory name, as in:
->
-> ~~~
-> $ mkdir backup
-> $ cp thesis/citations.txt thesis/quotations.txt backup
-> ~~~
-> {: .bash}
->
-> What does `cp` do when given three or more filenames, as in:
->
-> ~~~
-> $ ls -F
-> ~~~
-> {: .bash}
-> ~~~
-> intro.txt    methods.txt    survey.txt
-> ~~~
-> {: .output}
-> ~~~
-> $ cp intro.txt methods.txt survey.txt
-> ~~~
-> {: .bash}
-{: .challenge}
 
 > ## Listing Recursively and By Time
 >
@@ -492,22 +464,7 @@ but it does find the copy in `thesis` that we didn't delete.
 > In what order does `ls -R -t` display things?
 {: .challenge}
 
-> ## Creating Files a Different Way
-> 
-> We have seen how to create text files using the `nano` editor.
-> Now, try the following command in your home directory:
-> 
-> $ cd                  # go to your home directory
-> $ touch my_file.txt
->
-> 1.  What did the touch command do?
->     When you look at your home directory using the GUI file explorer,
->     does the file show up?
-> 
-> 2.  Use `ls -l` to inspect the file's.  How large is `my_file.txt`?
->
-> 3.  When might you want to create a file this way?
-{: .challenge}
+
 
 > ## Moving to the Current Folder
 >
