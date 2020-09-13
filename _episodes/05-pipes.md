@@ -58,6 +58,7 @@ We can print out the contents of these files using the `cat` command. Let's prin
 ~~~
 $ cat methane.pdb
 ~~~
+{: .bash}
 
 ~~~
 COMPND      METHANE
@@ -72,18 +73,21 @@ END
 ~~~
 {: .output}
 
-This is a pretty short file (because methane is a simple molecule). If you want to print a longer file which takes several pages of output, you can use the command `less` instead of `cat`.
-
-Now, we can count 
-
-Let's go into that directory with `cd` and run the command `wc *.pdb`.
-`wc` is the "word count" command:
-it counts the number of lines, words, and characters in files.
-The `*` in `*.pdb` matches zero or more characters,
-so the shell turns `*.pdb` into a list of all `.pdb` files in the current directory:
+Now, I would like to introduce you to a command that could be very useful: `wc`, which stands for "word count" but it actually counts the number of lines, words, and characters in files. Let's apply it to `methane.pdb` and see what we get:
 
 ~~~
-$ cd molecules
+$ wc methane.pdb
+~~~
+{: .bash}
+
+~~~
+  9  57 431 methane.pdb
+~~~
+{: .output}
+
+So, the file `methane.pdb` has nine lines, 57 words, and 431 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
+
+~~~
 $ wc *.pdb
 ~~~
 {: .bash}
@@ -105,45 +109,9 @@ $ wc *.pdb
 > characters, so `*.pdb` matches `ethane.pdb`, `propane.pdb`, and every
 > file that ends with '.pdb'. On the other hand, `p*.pdb` only matches
 > `pentane.pdb` and `propane.pdb`, because the 'p' at the front only
-> matches filenames that begin with the letter 'p'.
->
-> `?` is also a wildcard, but it only matches a single character. This
-> means that `p?.pdb` would match `pi.pdb` or `p5.pdb` (if we had these two
-> files in the `molecules` directory), but not `propane.pdb`.
-> We can use any number of wildcards at a time: for example, `p*.p?*`
-> matches anything that starts with a 'p' and ends with '.', 'p', and at
-> least one more character (since the `?` has to match one character, and
-> the final `*` can match any number of characters). Thus, `p*.p?*` would
-> match `preferred.practice`, and even `p.pi` (since the first `*` can
-> match no characters at all), but not `quality.practice` (doesn't start
-> with 'p') or `preferred.p` (there isn't at least one character after the
-> '.p').
->
-> When the shell sees a wildcard, it expands the wildcard to create a
-> list of matching filenames *before* running the command that was
-> asked for. As an exception, if a wildcard expression does not match
-> any file, Bash will pass the expression as a parameter to the command
-> as it is. For example typing `ls *.pdf` in the `molecules` directory
-> (which contains only files with names ending with `.pdb`) results in
-> an error message that there is no file called `*.pdf`.
-> However, generally commands like `wc` and `ls` see the lists of
-> file names matching these expressions, but not the wildcards
-> themselves. It is the shell, not the other programs, that deals with
-> expanding wildcards, and this is another example of orthogonal design.
+> matches filenames that begin with the letter 'p'. If you want to apply the command to all the 
+> files in the folder, you can do `wc *`.
 {: .callout}
-
-> ## Using Wildcards
->
-> When run in the `molecules` directory, which `ls` command will
-> produce this output?
->
-> `ethane.pdb   methane.pdb`
->
-> 1. `ls *t*ane.pdb`
-> 2. `ls *t?ne.*`
-> 3. `ls *t??ne.pdb`
-> 4. `ls ethane.*`
-{: .challenge}
 
 If we run `wc -l` instead of just `wc`,
 the output shows only the number of lines per file:
@@ -197,10 +165,6 @@ lengths.txt
 {: .output}
 
 We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
-`cat` stands for "concatenate":
-it prints the contents of files one after another.
-There's only one file in this case,
-so `cat` just shows us what it contains:
 
 ~~~
 $ cat lengths.txt
@@ -409,248 +373,6 @@ so that you and other people can put those programs into pipes to multiply their
 > standard input.
 {: .callout}
 
-## Nelle's Pipeline: Checking Files
-
-Nelle has run her samples through the assay machines
-and created 1520 files in the `north-pacific-gyre/2012-07-03` directory described earlier.
-As a quick sanity check, starting from her home directory, Nelle types:
-
-~~~
-$ cd north-pacific-gyre/2012-07-03
-$ wc -l *.txt
-~~~
-{: .bash}
-
-The output is 1520 lines that look like this:
-
-~~~
-300 NENE01729A.txt
-300 NENE01729B.txt
-300 NENE01736A.txt
-300 NENE01751A.txt
-300 NENE01751B.txt
-300 NENE01812A.txt
-... ...
-~~~
-{: .output}
-
-Now she types this:
-
-~~~
-$ wc -l *.txt | sort -n | head -n 5
-~~~
-{: .bash}
-
-~~~
- 240 NENE02018B.txt
- 300 NENE01729A.txt
- 300 NENE01729B.txt
- 300 NENE01736A.txt
- 300 NENE01751A.txt
-~~~
-{: .output}
-
-Whoops: one of the files is 60 lines shorter than the others.
-When she goes back and checks it,
-she sees that she did that assay at 8:00 on a Monday morning --- someone
-was probably in using the machine on the weekend,
-and she forgot to reset it.
-Before re-running that sample,
-she checks to see if any files have too much data:
-
-~~~
-$ wc -l *.txt | sort -n | tail -n 5
-~~~
-{: .bash}
-
-~~~
- 300 NENE02040B.txt
- 300 NENE02040Z.txt
- 300 NENE02043A.txt
- 300 NENE02043B.txt
-5040 total
-~~~
-{: .output}
-
-Those numbers look good --- but what's that 'Z' doing there in the third-to-last line?
-All of her samples should be marked 'A' or 'B';
-by convention,
-her lab uses 'Z' to indicate samples with missing information.
-To find others like it, she does this:
-
-~~~
-$ ls *Z.txt
-~~~
-{: .bash}
-
-~~~
-NENE01971Z.txt    NENE02040Z.txt
-~~~
-{: .output}
-
-Sure enough,
-when she checks the log on her laptop,
-there's no depth recorded for either of those samples.
-Since it's too late to get the information any other way,
-she must exclude those two files from her analysis.
-She could just delete them using `rm`,
-but there are actually some analyses she might do later where depth doesn't matter,
-so instead, she'll just be careful later on to select files using the wildcard expression `*[AB].txt`.
-As always,
-the `*` matches any number of characters;
-the expression `[AB]` matches either an 'A' or a 'B',
-so this matches all the valid data files she has.
-
-> ## What Does `sort -n` Do?
->
-> If we run `sort` on this file:
->
-> ~~~
-> 10
-> 2
-> 19
-> 22
-> 6
-> ~~~
-> {: .source}
->
-> the output is:
->
-> ~~~
-> 10
-> 19
-> 2
-> 22
-> 6
-> ~~~
-> {: .output}
->
-> If we run `sort -n` on the same input, we get this instead:
->
-> ~~~
-> 2
-> 6
-> 10
-> 19
-> 22
-> ~~~
-> {: .output}
->
-> Explain why `-n` has this effect.
-{: .challenge}
-
-> ## What Does `<` Mean?
->
-> What is the difference between:
->
-> ~~~
-> $ wc -l < mydata.dat
-> ~~~
-> {: .bash}
->
-> and:
->
-> ~~~
-> $ wc -l mydata.dat
-> ~~~
-> {: .bash}
-{: .challenge}
-
-> ## What Does `>>` Mean?
->
-> What is the difference between:
->
-> ~~~
-> $ echo hello > testfile01.txt
-> ~~~
-> {: .bash}
->
-> and:
->
-> ~~~
-> $ echo hello >> testfile02.txt
-> ~~~
-> {: .bash}
->
-> Hint: Try executing each command twice in a row and then examining the output files.
-{: .challenge}
-
-> ## More on Wildcards
-> 
-> Sam has a directory containing calibration data, datasets, and descriptions of
-> the datasets:
->
-> ~~~
-> 2015-10-23-calibration.txt
-> 2015-10-23-dataset1.txt
-> 2015-10-23-dataset2.txt
-> 2015-10-23-dataset_overview.txt
-> 2015-10-26-calibration.txt
-> 2015-10-26-dataset1.txt
-> 2015-10-26-dataset2.txt
-> 2015-10-26-dataset_overview.txt
-> 2015-11-23-calibration.txt
-> 2015-11-23-dataset1.txt
-> 2015-11-23-dataset2.txt
-> 2015-11-23-dataset_overview.txt
-> ~~~
-> {: .bash}
->
-> Before heading off to another field trip, she wants to back up her data and
-> send some datasets to her colleague Bob. Sam uses the following commands
-> to get the job done:
->
-> ~~~
-> $ cp *dataset* /backup/datasets
-> $ cp ____calibration____ /backup/calibration
-> $ cp 2015-____-____ ~/send_to_bob/all_november_files/
-> $ cp ____ ~/send_to_bob/all_datasets_created_on_a_23rd/
-> ~~~
-> {: .bash}
->
-> Help Sam by filling in the blanks.
-{: .challenge}
-
-> ## Piping Commands Together
->
-> In our current directory, we want to find the 3 files which have the least number of
-> lines. Which command listed below would work?
->
-> 1. `wc -l * > sort -n > head -n 3`
-> 2. `wc -l * | sort -n | head -n 1-3`
-> 3. `wc -l * | head -n 3 | sort -n`
-> 4. `wc -l * | sort -n | head -n 3`
-{: .challenge}
-
-> ## Why Does `uniq` Only Remove Adjacent Duplicates?
->
-> The command `uniq` removes adjacent duplicated lines from its input.
-> For example, if a file `salmon.txt` contains:
->
-> ~~~
-> coho
-> coho
-> steelhead
-> coho
-> steelhead
-> steelhead
-> ~~~
-> {: .source}
->
-> then `uniq salmon.txt` produces:
->
-> ~~~
-> coho
-> steelhead
-> coho
-> steelhead
-> ~~~
-> {: .output}
->
-> Why do you think `uniq` only removes *adjacent* duplicated lines?
-> (Hint: think about very large data sets.) What other command could
-> you combine with it in a pipe to remove all duplicated lines?
-{: .challenge}
 
 > ## Pipe Reading Comprehension
 >
@@ -702,40 +424,6 @@ so this matches all the valid data files she has.
 > What other command(s) could be added to this in a pipeline to find
 > out what animals the file contains (without any duplicates in their
 > names)?
-{: .challenge}
-
-> ## Removing Unneeded Files
->
-> Suppose you want to delete your processed data files, and only keep
-> your raw files and processing script to save storage.
-> The raw files end in `.dat` and the processed files end in `.txt`.
-> Which of the following would remove all the processed data files,
-> and *only* the processed data files?
->
-> 1. `rm ?.txt`
-> 2. `rm *.txt`
-> 3. `rm * .txt`
-> 4. `rm *.*`
-{: .challenge}
-
-> ## Wildcard Expressions
->
-> Wildcard expressions can be very complex, but you can sometimes write
-> them in ways that only use simple syntax, at the expense of being a bit
-> more verbose.  For example, the wildcard expression `*[AB].txt`
-> matches all files ending in `A.txt` or `B.txt`. Imagine you forgot about
-> this.
-> 
-> 1.  Can you match the same set of files with basic wildcard expressions
->     that do not use the `[]` syntax? *Hint*: You may need more than one
->     expression.
->
-> 2.  The expression that you found and the expression from the lesson match the
->     same set of files in this example. What is the small difference between the
->     outputs?
->
-> 3.  Under what circumstances would your new expression produce an error message
->     where the original one would not?
 {: .challenge}
 
 > ## Which Pipe?
