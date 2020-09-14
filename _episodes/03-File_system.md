@@ -389,6 +389,16 @@ $ cd /home/<your Palmetto username>/linux_workshop
 
 Check that we've moved to the right place by running `pwd`.  
 
+This is probably a good time to mention a couple of things which make Bash a convenient shell. The first one is *tab completion*. Most of the times, you don't need to type in the full name of the folders; you can to type the first few characters and press the TAB key. If there are files or folders that match the pattern you have entered, it will be completed for you. Let's go to the home directory, then type `cd linu` and press TAB instead of ENTER, and see what happens:
+
+~~~
+$ cd 
+$ cd linu
+~~~
+{: .bash}
+The shell should automatically complete `linu` to `linux_workshop`. The second useful feature is the *command history*. If you press the UP &uarr; or DOWN &darr; arrow keys, you can go through the previously typed commands. Try it. 
+
+
 If we want to move up one level from the shell directory, we could use `cd ..`.  But 
 there is another way to move to any directory, regardless of your 
 current location.  
