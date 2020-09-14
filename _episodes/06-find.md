@@ -28,13 +28,13 @@ It is also the name of a very useful command-line program.
 `grep` finds and prints lines in files that match a pattern.
 For our examples,
 we will use a file that contains three haikus taken from a
-1998 competition in *Salon* magazine. For this set of examples,
-we're going to be working in the writing subdirectory:
+1998 competition in *Salon* magazine. Let's create a file called `haiku.txt` and paste the contents of the web page into it. On MobaXTerm, you can paste with "Shift + Insert". On a Mac, you can use Ctrl+V.
+
 
 ~~~
 $ cd
-$ cd writing
-$ cat haiku.txt
+$ cd linux_workshop
+$ nano haiku.txt
 ~~~
 {: .bash}
 
@@ -52,13 +52,6 @@ Today it is not working
 Software is like that.
 ~~~
 {: .output}
-
-> ## Forever, or Five Years
->
-> We haven't linked to the original haikus because they don't appear to be on *Salon*'s site any longer.
-> As [Jeff Rothenberg said](http://www.clir.org/pubs/archives/ensuring.pdf),
-> "Digital information lasts forever --- or five years, whichever comes first."
-{: .callout}
 
 Let's find lines that contain the word "not":
 
@@ -198,7 +191,7 @@ $ grep --help
 ~~~
 {: .bash}
 
-~~
+~~~
 Usage: grep [OPTION]... PATTERN [FILE]...
 Search for PATTERN in each FILE or standard input.
 PATTERN is, by default, a basic regular expression (BRE).
