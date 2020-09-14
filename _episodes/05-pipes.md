@@ -33,6 +33,7 @@ For training purposes, let's use some data from the Software Carpentry workshop.
 $ cd ~/linux_workshop
 $ git clone https://github.com/silshack/pipes.git
 ~~~
+{: .bash}
 
 This will create a folder called `pipes`, which will contain a subfolder called `molecules`. Lets's see its contents.
 
@@ -41,6 +42,7 @@ $ cd pipes
 $ cd molecules
 $ ls
 ~~~
+{: .bash}
 
 ~~~
 cubane.pdb    ethane.pdb    methane.pdb
@@ -73,7 +75,7 @@ END
 ~~~
 {: .output}
 
-Now, I would like to introduce you to a command that could be very useful: `wc`, which stands for "word count" but it actually counts the number of lines, words, and characters in files. Let's apply it to `methane.pdb` and see what we get:
+Now, I would like to introduce you to a command that could be very useful: `wc`, which stands for "word count" and counts the number of lines, words, and characters in files. Let's apply it to `methane.pdb` and see what we get:
 
 ~~~
 $ wc methane.pdb
@@ -85,7 +87,7 @@ $ wc methane.pdb
 ~~~
 {: .output}
 
-So, the file `methane.pdb` has nine lines, 57 words, and 431 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
+So, the file `methane.pdb` has 9 lines, 57 words, and 431 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
 
 ~~~
 $ wc *.pdb
@@ -259,10 +261,6 @@ The vertical bar, `|`, between the two commands is called a **pipe**.
 It tells the shell that we want to use
 the output of the command on the left
 as the input to the command on the right.
-The computer might create a temporary file if it needs to,
-or copy data from one program to the other in memory,
-or something else entirely;
-we don't have to know or care.
 
 Nothing prevents us from chaining pipes consecutively.
 That is, we can for example send the output of `wc` directly to `sort`,
@@ -307,7 +305,7 @@ When a computer runs a program --- any program --- it creates a **process**
 in memory to hold the program's software and its current state.
 Every process has an input channel called **standard input**.
 (By this point, you may be surprised that the name is so memorable, but don't worry:
-most Unix programmers call it "stdin".
+most Linux programmers call it "stdin".
 Every process also has a default output channel called **standard output**
 (or "stdout").
 
@@ -341,15 +339,15 @@ and from `sort` through `head` to the screen.
 
 ![Redirects and Pipes](../fig/redirects-and-pipes.png)
 
-This simple idea is why Unix has been so successful.
+This simple idea is why Linux has been so successful.
 Instead of creating enormous programs that try to do many different things,
-Unix programmers focus on creating lots of simple tools that each do one job well,
+Linux programmers focus on creating lots of simple tools that each do one job well,
 and that work well with each other.
 This programming model is called "pipes and filters".
 We've already seen pipes;
 a **filter** is a program like `wc` or `sort`
 that transforms a stream of input into a stream of output.
-Almost all of the standard Unix tools can work this way:
+Almost all of the standard Linux tools can work this way:
 unless told to do otherwise,
 they read from standard input,
 do something with what they've read,
@@ -390,7 +388,7 @@ so that you and other people can put those programs into pipes to multiply their
 > ~~~
 > {: .source}
 >
-> What text passes through each of the pipes and the final redirect in the pipeline below?
+> What text passes through each of the pipes and the final redirect in the pipeline below? Note that `sort -r` sorts in reverse order.
 >
 > ~~~
 > $ cat animals.txt | head -n 5 | tail -n 3 | sort -r > final.txt
@@ -398,72 +396,4 @@ so that you and other people can put those programs into pipes to multiply their
 > {: .bash}
 {: .challenge}
 
-> ## Pipe Construction
->
-> For the file `animals.txt` from the previous exercise, the command:
->
-> ~~~
-> $ cut -d , -f 2 animals.txt
-> ~~~
-> {: .bash}
->
-> produces the following output:
->
-> ~~~
-> deer
-> rabbit
-> raccoon
-> rabbit
-> deer
-> fox
-> rabbit
-> bear
-> ~~~
-> {: .output}
->
-> What other command(s) could be added to this in a pipeline to find
-> out what animals the file contains (without any duplicates in their
-> names)?
-{: .challenge}
 
-> ## Which Pipe?
->
-> A file called animals.txt contains 586 lines of data formatted as follows:
->
-> ~~~
-> 2012-11-05,deer
-> 2012-11-05,rabbit
-> 2012-11-05,raccoon
-> 2012-11-06,rabbit
-> ...
-> ~~~
-> {: .output}
->
-> What command would you use to produce a table that shows
-> the total count of each type of animal in the file?
->
-> 1.  `grep {deer, rabbit, raccoon, deer, fox, bear} animals.txt | wc -l`
-> 2.  `sort animals.txt | uniq -c`
-> 3.  `sort -t, -k2,2 animals.txt | uniq -c`
-> 4.  `cut -d, -f 2 animals.txt | uniq -c`
-> 5.  `cut -d, -f 2 animals.txt | sort | uniq -c`
-> 6.  `cut -d, -f 2 animals.txt | sort | uniq -c | wc -l`
-{: .challenge}
-
-> ## Appending Data
->
-> Consider the file `animals.txt`, used in previous exercise. 
-> After these commands, select the alternative that 
-> corresponds the file `animalsUpd.txt`:
->
-> ~~~
-> $ head -3 animals.txt > animalsUpd.txt
-> $ tail -2 animals.txt >> animalsUpd.txt
-> ~~~
-> {: .bash}
-> 
-> 1. The first three lines of `animals.txt`
-> 2. The last two lines of `animals.txt`
-> 3. The first three lines and the last two lines of `animals.txt`
-> 4. The second and third lines of `animals.txt`
-{: .challenge}
