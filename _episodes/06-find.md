@@ -237,3 +237,12 @@ Miscellaneous:
 > matches an actual 'o'.
 {: .callout}
 
+The last thing I would like to mention in today's workshop is the `history` command. It is the log of all the recent Linux commands that you have typed (by default, Palmetto stores 1,000 most recent commands). To see them, simply type
+
+~~~
+$ history
+~~~
+{: .bash}
+
+You can also save it into a text file by redirecting the output: `history > logfile.txt`. You can also clear the history by typing `history -c`.
+
