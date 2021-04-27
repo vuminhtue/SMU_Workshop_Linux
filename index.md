@@ -5,7 +5,7 @@ permalink: index.html  # Is the only page that doesn't follow the pattern /:path
 ---
 
 > ## Instructor
-> - **Instructor**: Grigori Yourganov
+> - **Instructor**: Grigori Yourganov, Tue Vu
 > - **Office**: 2092 Barre Hall
 > - **Office Hours**: Wednesday Office-hours 8.30am – 11.30am
 > - **Email**: gyourga AT clemson DOT edu
