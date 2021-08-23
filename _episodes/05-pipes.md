@@ -83,11 +83,11 @@ $ wc methane.pdb
 {: .bash}
 
 ~~~
-  9  57 431 methane.pdb
+  9  57 422 methane.pdb
 ~~~
 {: .output}
 
-So, the file `methane.pdb` has 9 lines, 57 words, and 431 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
+So, the file `methane.pdb` has 9 lines, 57 words, and 422 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
 
 ~~~
 $ wc *.pdb
