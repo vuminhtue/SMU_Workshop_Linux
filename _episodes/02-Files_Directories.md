@@ -38,29 +38,6 @@ The first command that we will look at is called `pwd` (**print working director
 $ pwd
 ~~~
 
-To understand what a "home directory" is,
-let's have a look at how the file system as a whole is organized.  
-On Palmetto, the filesystem looks something like this: 
-
-![The File System](../fig/filesystem.png)
-
-At the top is the **root directory**
-that holds everything else.
-We refer to it using a slash character `/` on its own.
-
-Inside that directory are several other directories:
-`home` (where users' personal directories are located),
-`bin` (which is where some built-in programs are stored),
-`tmp` (for temporary files that don't need to be stored long-term),
-`etc` (for miscellaneous data files),
-and so on.  
-
-We know that our current working directory is stored inside `/home`
-because `/home` is the first part of its name.
-Similarly,
-we know that `/home` is stored inside the root directory `/`
-because its name begins with `/`.
-
 > ## Slashes
 >
 > Notice that there are two meanings for the `/` character.
