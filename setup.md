@@ -7,11 +7,8 @@ VSCode can be downloaded from [here](https://code.visualstudio.com/download)
 ![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/f429df17-9245-44f5-9a16-4882d51495ba)
 (Select your appropriate version)
 
-## 2. Later part of the workshop, I will be introducing how to login to SMU ManeFrame 3 and SuperPOD, so it's encouraged to request for an account before hand for all SMU users by applying from [here](https://southernmethodistuniversity.github.io/hpc_docs/accounts.html):
+## 2. We gonna use SuperPOD login node as the main platform for the workshop. So you should request for an HPC account from [here](https://southernmethodistuniversity.github.io/hpc_docs/accounts.html):
 
 ![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/261f12fc-5ed2-4125-a4e2-2a5a18b1e43d)
-
-## 3. Download the sample from [here](https://swcarpentry.github.io/shell-novice/) to your Download folder then unzip it
-
 
 {% include links.md %}
