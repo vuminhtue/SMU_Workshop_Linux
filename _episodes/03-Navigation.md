@@ -172,9 +172,10 @@ current location.
 # Creating thing
 ## Create new directory
 
-The next command we will discuss is `mkdir`, which creates a new directory. Let's create a directory with the name `linux_workshop`:
+The next command we will discuss is `mkdir`, which creates a new directory. Let's create a directory with the name `linux_workshop` inside shell-lesson-data:
 
 ~~~
+$ cd $HOME/shell-lesson-data
 $ mkdir linux_workshop
 ~~~
 {: .bash}
@@ -221,4 +222,41 @@ As you can see, it also displays another special directory that's just called `.
 which means "the current working directory".
 It may seem redundant to have a name for it, but we'll see some uses for it soon.
 
+## Create new file
+
+### Using touch command
+
+**touch** command will create new file instantly:
+
+```
+$ cd linux_workshop
+$ touch file1.txt
+$ ls
+```
+
+### Using nano command
+**nano** is used to create text file very easily.
+All the commands inside nano are introduced below with **^** stands for **Ctrl** button
+
+```
+$ nano file2.txt
+```
+
+![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/f5d38e06-72bd-4040-94b1-1f2928c5d1e6)
+
+### Using vim command
+**vim** editor is a little bit more complicated to create a file with content:
+
+```
+vim file3.txt
+```
+
+### Using emacs command 
+
+```
+emacs file4.txt
+```
+
+![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/a5814109-9c36-487e-a8cb-3c7edb4afb7a)
+Hint: F10 to go to emacs virtual menu dropdown
 
