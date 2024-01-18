@@ -11,5 +11,7 @@ VSCode can be downloaded from [here](https://code.visualstudio.com/download)
 
 ![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/261f12fc-5ed2-4125-a4e2-2a5a18b1e43d)
 
+3. Download the sample from [here](https://swcarpentry.github.io/shell-novice/) to your Download folder then unzip it
+
 
 {% include links.md %}
