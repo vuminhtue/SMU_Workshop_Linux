@@ -32,11 +32,24 @@ and directories (also called "folders"),
 which hold files or other directories.
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
-The first command that we will look at is called `pwd` (**print working directory**). Let's type it in:
+The first command that we will look at is called `pwd` (**print working directory**). Let's type it in your VSCode Terminal:
 
 ~~~
 $ pwd
 ~~~
+
+Normally, in VSCode in Windows, you gonna see the "\" as in:
+
+```
+PS C:\Users\123456>
+```
+
+and in MacOS, Linux, you gonna see "/" such as:
+
+```
+(base) a123456@pcname ~ %
+```
+
 
 > ## Slashes
 >
