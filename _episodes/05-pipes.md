@@ -76,7 +76,7 @@ So, the file `methane.pdb` has 9 lines, 57 words, and 422 characters. Now, let's
 ~~~
 $ wc *.pdb
 ~~~
-{: .bash}
+
 
 ~~~
   20  156 1158 cubane.pdb
@@ -87,7 +87,6 @@ $ wc *.pdb
   15  111  825 propane.pdb
  107  819 6081 total
 ~~~
-{: .output}
 
 > ## Wildcards
 >
@@ -105,7 +104,6 @@ the output shows only the number of lines per file:
 ~~~
 $ wc -l *.pdb
 ~~~
-{: .bash}
 
 ~~~
   20  cubane.pdb
@@ -116,7 +114,6 @@ $ wc -l *.pdb
   15  propane.pdb
  107  total
 ~~~
-{: .output}
 
 We can also use `-w` to get only the number of words,
 or `-c` to get only the number of characters.
@@ -129,7 +126,7 @@ Our first step toward a solution is to run the command:
 ~~~
 $ wc -l *.pdb > lengths.txt
 ~~~
-{: .bash}
+
 
 The greater than symbol, `>`, tells the shell to **redirect** the command's output
 to a file instead of printing it to the screen. (This is why there is no screen output:
@@ -143,19 +140,12 @@ some caution.
 ~~~
 $ ls lengths.txt
 ~~~
-{: .bash}
-
-~~~
-lengths.txt
-~~~
-{: .output}
 
 We can now send the content of `lengths.txt` to the screen using `cat lengths.txt`.
 
 ~~~
 $ cat lengths.txt
 ~~~
-{: .bash}
 
 ~~~
   20  cubane.pdb
@@ -166,7 +156,7 @@ $ cat lengths.txt
   15  propane.pdb
  107  total
 ~~~
-{: .output}
+
 
 > ## Output Page by Page
 >
@@ -188,7 +178,6 @@ instead, it sends the sorted result to the screen:
 ~~~
 $ sort -n lengths.txt
 ~~~
-{: .bash}
 
 ~~~
   9  methane.pdb
@@ -199,7 +188,6 @@ $ sort -n lengths.txt
  30  octane.pdb
 107  total
 ~~~
-{: .output}
 
 We can put the sorted list of lines in another temporary file called `sorted-lengths.txt`
 by putting `> sorted-lengths.txt` after the command,
@@ -211,12 +199,10 @@ we can run another command called `head` to get the first few lines in `sorted-l
 $ sort -n lengths.txt > sorted-lengths.txt
 $ head -n 1 sorted-lengths.txt
 ~~~
-{: .bash}
 
 ~~~
   9  methane.pdb
 ~~~
-{: .output}
 
 Using the parameter `-n 1` with `head` tells it that
 we only want the first line of the file;
@@ -234,12 +220,10 @@ We can make it easier to understand by running `sort` and `head` together:
 ~~~
 $ sort -n lengths.txt | head -n 1
 ~~~
-{: .bash}
 
 ~~~
   9  methane.pdb
 ~~~
-{: .output}
 
 The vertical bar, `|`, between the two commands is called a **pipe**.
 It tells the shell that we want to use
@@ -254,7 +238,6 @@ Thus we first use a pipe to send the output of `wc` to `sort`:
 ~~~
 $ wc -l *.pdb | sort -n
 ~~~
-{: .bash}
 
 ~~~
    9 methane.pdb
@@ -265,19 +248,16 @@ $ wc -l *.pdb | sort -n
   30 octane.pdb
  107 total
 ~~~
-{: .output}
 
 And now we send the output ot this pipe, through another pipe, to `head`, so that the full pipeline becomes:
 
 ~~~
 $ wc -l *.pdb | sort -n | head -n 1
 ~~~
-{: .bash}
 
 ~~~
    9  methane.pdb
 ~~~
-{: .output}
 
 This is exactly like a mathematician nesting functions like *log(3x)*
 and saying "the log of three times *x*".
