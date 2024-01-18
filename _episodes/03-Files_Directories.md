@@ -221,7 +221,7 @@ to move to `linux_workshop`.
 > mean "the current user's home directory". For example, `~/shell-lesson-data` is equivalent to
 > `/users/<your SuperPOD username>/shell-lesson-data`.
 >
-> 
+> In addition, you can also use **$HOME** as the shortcut to your home directory:
 > 
 > Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
 > *the previous directory I was in*, which is faster than having to remember, 
