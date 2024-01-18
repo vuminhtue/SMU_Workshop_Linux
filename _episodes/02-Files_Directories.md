@@ -3,7 +3,7 @@ title: "Navigating Files and Directories"
 teaching: 15
 exercises: 0
 questions:
-- "How can I move around on Palmetto?"
+- "How can I move files around?"
 - "How can I see what files and directories I have?"
 - "How can I specify the location of a file or directory on my computer?"
 objectives:
