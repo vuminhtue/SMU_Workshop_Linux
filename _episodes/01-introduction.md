@@ -1,6 +1,6 @@
 ---
 title: "Introducing the Shell"
-teaching: 5
+teaching: 15
 exercises: 0
 questions:
 - "What is a command shell?"
@@ -8,27 +8,26 @@ objectives:
 - "Explain how the shell relates to the keyboard, the screen, the operating system, and users' programs."
 - "Explain when and why command-line interfaces should be used instead of graphical interfaces."
 ---
+## What is UNIX/Linux?
+UNIX is an operating system which was first developed in the 1960s, and has been under constant development ever since. By operating system, we mean the suite of programs which make the computer work. It is a stable, multi-user, multi-tasking system for servers, desktops and laptops.
 
+UNIX systems also have a graphical user interface (GUI) similar to Microsoft Windows which provides an easy to use environment. However, knowledge of UNIX is required for operations which aren’t covered by a graphical program, or for when there is no windows interface available, for example, in a ssh session.
 
+## Types of UNIX
+There are many different versions of UNIX, although they share common similarities. The most popular varieties of UNIX are GNU/Linux and macOS. Within the “Linux” category, there are a multitude of flavors: Debian (Ubuntu, Mint, Crunchbang), RedHat (RHEL, Fedora, CentOS), SuSE, etc.
 
-The Palmetto cluster is running the Linux operating system (more specifically, [CentOS 8](https://www.centos.org/)). An *operating system* is a special software that coordinates the computer's hardware and other software. Other popular operating systems are Windows and Mac OS. 
+## The UNIX operating system
+The UNIX operating system is made up of three parts; the kernel, the shell, and the programs.
 
-This workshop will teach you how to use the Linux command line interface. For this purpose, we will use the *terminal* software, such as MobaXTerm or Putty (on Windows machines) or Terminal (on Mac and Linux machines). We will use the terminal sowtare to enter the Linux commands which will be immediately executed by Palmetto. The terminal does not use graphical features (like windows or buttons) and the use of the mouse is very limited. This is the most direct way to interact with Palmetto; there is an option of graphical user interface (whih we will not cover in today's workshop), but this way is indirect because the graphical interaction needs to be translated into Linux commands by the operating system. Another advantage of using the Linux commands is *scripting*, where we can order the oprerating system to perform some ations repeatedly instead of clicking the mouse each time we need to perform the action.    
+### The Kernel
+The kernel of UNIX is the hub of the operating system: it allocates time and memory to programs and handles the filestore and communications in response to system calls.
 
-Most Linux computers, including Palmetto, run a separate program called **command shell**.
-What the user types goes into the shell,
-which then figures out what commands to run and orders the computer to execute them. Note, the shell is called *the shell* because it encloses the operating system in order to hide some of its complexity and make it simpler to interact with.
+### The Shell 
+The shell acts as an interface between the user and the kernel. When a user logs in, the login program checks the username and password, and then starts another program called the shell. The shell is a command line interpreter (CLI). It interprets the commands the user types in and arranges for them to be carried out. The commands are themselves programs: when they terminate, the shell gives the user another prompt.
+Users will typically have the TCSH shell or Bash shell by default (Bash is typically the default on modern Linux distributions).
 
-A shell is a program like any other.
-What's special about it is that its job is to run other programs
-rather than to do calculations itself.
-Palmetto runs the shell that's called **Bash**, which is the most popular Linux shell.
+These shells have certain features to help the user inputting commands:
 
+- Filename Completion - By typing part of the name of a command, filename or directory and pressing the [Tab] key, the tcsh and bash shells will complete the rest of the name automatically. If the shell finds more than one name beginning with those letters you have typed, it will beep, prompting you to type a few more letters before pressing the [Tab] key again.
 
-The command line interface works as follows. You enter the command, press "Enter", and the operating system executes the command. When it's done, you are prompted to enter the next command. It is possible to stop the execution by typing Ctrl+C.
-
-A word of warning: Linux is case-sensitive and typo-sensitive. Commands need to be entered directly as shown; it is important to use the right case (upper or lower), to use spaces when they are needed, and not to use spaces when they are not needed.
-
-Now, let's log into Palmetto.
-
-
+- History - The shell keeps a list of the commands you have typed in. If you need to repeat a command, use the cursor keys to scroll up and down the list or type history for a list of previous commands.
