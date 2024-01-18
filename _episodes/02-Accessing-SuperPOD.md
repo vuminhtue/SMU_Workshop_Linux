@@ -24,11 +24,11 @@ ssh <your SuperPOD username>@superpod.smu.edu
 When logged in, you are presented with a welcome message and the following "prompt":
 
 ~~~
-[username@slogin-02 ~]$
+[username@slogin-01 ~]$
 ~~~
 {: .bash}
 
-The prompt in a bash shell usually consists of a dollar (`$`) sign, and shows that the shell is waiting for input. The prompt may also contain other information: this prompt tells you `your username` and which node you are connected to - `slogin-02` is the "login" node.
+The prompt in a bash shell usually consists of a dollar (`$`) sign, and shows that the shell is waiting for input. The prompt may also contain other information: this prompt tells you `your username` and which node you are connected to - `slogin-01` is the "login" node.
 
 It also tells you your current directory, i.e., `~`, which, as you will learn shortly,
 is short for your *home* directory. We will mostly refer to the prompt as just `$`, i.e.,
