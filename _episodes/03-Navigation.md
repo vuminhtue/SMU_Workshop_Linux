@@ -24,6 +24,7 @@ keypoints:
 - "'..' means 'the directory above the current one'; '.' on its own means 'the current directory'."
 ---
 
+# Navigation
 
 The part of the operating system responsible for managing files and directories
 is called the **file system**. It organizes our data into files, which hold information,
@@ -117,6 +118,60 @@ $ ls /home
 
 Note that on SuperPOD you cannot access other people's directories. 
 
+> ## Other Hidden Files
+> 
+> In addition to the hidden directories `..` and `.`, you may also see a file
+> called `.bash_profile`. This file usually contains shell configuration
+> settings. You may also see other files and directories beginning
+> with `.`. These are usually files and directories that are used to configure
+> different programs on your computer. The prefix `.` is used to prevent these
+> configuration files from cluttering the terminal when a standard `ls` command
+> is used.
+{: .callout}
+
+
+These  are the basic commands for navigating the filesystem on your computer: 
+`pwd`, `ls` and `cd`.  Let's explore some variations on those commands.  What happens 
+if you type `cd` on its own, without giving 
+a directory?  
+
+~~~
+$ cd
+~~~
+{: .bash}
+
+How can you check what happened?  `pwd` gives us the answer!  
+
+~~~
+$ pwd
+~~~
+{: .bash}
+
+It turns out that `cd` without an argument will return you to your home directory, 
+which is great if you've gotten lost in your own filesystem.  
+
+If we want to move up one level from the shell directory, we could use `cd ..`.  But 
+there is another way to move to any directory, regardless of your 
+current location.  
+
+> ## Few More Shortcuts
+>
+> The shell interprets the character `~` (tilde) at the start of a path to
+> mean "the current user's home directory". For example, `~/shell-lesson-data` is equivalent to
+> `/users/<your SuperPOD username>/shell-lesson-data`.
+>
+> In addition, you can also use **$HOME** as the shortcut to your home directory:
+> 
+> Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
+> *the previous directory I was in*, which is faster than having to remember, 
+> then type, the full path.  This is a *very* efficient way of moving back 
+> and forth between directories. The difference between `cd ..` and `cd -` is 
+> that the former brings you *up*, while the latter brings you *back*. 
+{: .callout}
+
+# Creating thing
+## Create new directory
+
 The next command we will discuss is `mkdir`, which creates a new directory. Let's create a directory with the name `linux_workshop`:
 
 ~~~
@@ -165,80 +220,5 @@ such as `..` (which in our case is the `/home` directory).
 As you can see, it also displays another special directory that's just called `.`,
 which means "the current working directory".
 It may seem redundant to have a name for it, but we'll see some uses for it soon.
-
-> ## Other Hidden Files
-> 
-> In addition to the hidden directories `..` and `.`, you may also see a file
-> called `.bash_profile`. This file usually contains shell configuration
-> settings. You may also see other files and directories beginning
-> with `.`. These are usually files and directories that are used to configure
-> different programs on your computer. The prefix `.` is used to prevent these
-> configuration files from cluttering the terminal when a standard `ls` command
-> is used.
-{: .callout}
-
-
-These  are the basic commands for navigating the filesystem on your computer: 
-`pwd`, `ls` and `cd`.  Let's explore some variations on those commands.  What happens 
-if you type `cd` on its own, without giving 
-a directory?  
-
-~~~
-$ cd
-~~~
-{: .bash}
-
-How can you check what happened?  `pwd` gives us the answer!  
-
-~~~
-$ pwd
-~~~
-{: .bash}
-
-~~~
-/users/<your SuperPOD username>
-~~~
-{: .output}
-
-It turns out that `cd` without an argument will return you to your home directory, 
-which is great if you've gotten lost in your own filesystem.  
-
-If we want to move up one level from the shell directory, we could use `cd ..`.  But 
-there is another way to move to any directory, regardless of your 
-current location.  
-
-So far, when specifying directory names, or even a directory path (as above), 
-we have been using **relative paths**.  When you use a relative path with a command 
-like `ls` or `cd`, it tries to find that location  from where we are,
-rather than from the root of the file system.  
-
-However, it is possible to specify the **absolute path** to a directory by 
-including its entire path from the root directory, which is indicated by a 
-leading slash.  The leading `/` tells the computer to follow the path from 
-the root of the file system, so it always refers to exactly one directory,
-no matter where we are when we run the command.
-
-This allows us to move to any directory from anywhere on
-the filesystem.  To find the absolute path 
-we're looking for, we can use `pwd` and then extract the piece we need 
-to move to `linux_workshop`.  
-
-
-
-> ## Few More Shortcuts
->
-> The shell interprets the character `~` (tilde) at the start of a path to
-> mean "the current user's home directory". For example, `~/shell-lesson-data` is equivalent to
-> `/users/<your SuperPOD username>/shell-lesson-data`.
->
-> In addition, you can also use **$HOME** as the shortcut to your home directory:
-> 
-> Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
-> *the previous directory I was in*, which is faster than having to remember, 
-> then type, the full path.  This is a *very* efficient way of moving back 
-> and forth between directories. The difference between `cd ..` and `cd -` is 
-> that the former brings you *up*, while the latter brings you *back*. 
-{: .callout}
-
 
 
