@@ -35,3 +35,7 @@ These shells have certain features to help the user inputting commands:
 - Filename Completion - By typing part of the name of a command, filename or directory and pressing the [Tab] key, the tcsh and bash shells will complete the rest of the name automatically. If the shell finds more than one name beginning with those letters you have typed, it will beep, prompting you to type a few more letters before pressing the [Tab] key again.
 
 - History - The shell keeps a list of the commands you have typed in. If you need to repeat a command, use the cursor keys to scroll up and down the list or type history for a list of previous commands.
+
+## Linux Cheatsheet
+
+Linux Cheatsheet can be found [here](https://bioinformatics-core-shared-training.github.io/shell-novice/unixref.pdf)
