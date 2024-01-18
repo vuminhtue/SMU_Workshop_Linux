@@ -27,28 +27,18 @@ Now that we know a few basic commands,
 we can finally look at the shell's most powerful feature:
 the ease with which it lets us combine existing programs in new ways.
 
-For training purposes, let's use some data from the Software Carpentry workshop. We will download them using the GitHub interface and the `git clone` command. Let's put them inside the `linux_workshop` folder.
+~~~
+$ cd ~/shell-lesson-data/exercise-data/alkanes
+~~~
 
 ~~~
-$ cd ~/linux_workshop
-$ git clone https://github.com/silshack/pipes.git
-~~~
-{: .bash}
-
-This will create a folder called `pipes`, which will contain a subfolder called `molecules`. Lets's see its contents.
-
-~~~
-$ cd pipes
-$ cd molecules
 $ ls
 ~~~
-{: .bash}
 
 ~~~
 cubane.pdb    ethane.pdb    methane.pdb
 octane.pdb    pentane.pdb   propane.pdb
 ~~~
-{: .output}
 
 
 The folder `molecules` contains six files describing some simple organic molecules.
