@@ -5,8 +5,7 @@ from [The Carpentries](https://carpentries.org/).
 
 ## Maintainer(s)
 
-* Linh B. Ngo
-
+* Tue Vu
 ## Authors
 
 A list of contributors to the lesson can be found in [AUTHORS](AUTHORS)
