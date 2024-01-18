@@ -29,9 +29,6 @@ the ease with which it lets us combine existing programs in new ways.
 
 ~~~
 $ cd ~/shell-lesson-data/exercise-data/alkanes
-~~~
-
-~~~
 $ ls
 ~~~
 
