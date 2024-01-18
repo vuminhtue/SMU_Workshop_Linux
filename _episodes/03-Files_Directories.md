@@ -224,13 +224,13 @@ or try the "b" and spacebar keys to skip up and down by full page.
 Quit the `man` pages by typing "q".
 
 
-We can also use `ls` to see the contents of a different directory. Let's list the directories of all the Palmetto users (note that you cannot actually go inside other people's directories):  
+We can also use `ls` to see the contents of a different directory. Let's list the directories of all the SuperPOD users (note that you cannot actually go inside other people's directories):  
 ~~~
 $ ls /home
 ~~~
 {: .bash}
 
-Note that on Palmetto you cannot access other people's directories. 
+Note that on SuperPOD you cannot access other people's directories. 
 
 The next command we will discuss is `mkdir`, which creates a new directory. Let's create a directory with the name `linux_workshop`:
 
@@ -241,9 +241,6 @@ $ mkdir linux_workshop
 
 Now, if you type `ls`, you should see `linux_workshop` lited among the contents of your home directory. 
 
-The next command that we will discuss is `cd` ("change directory"), which changes our location to a different directory, so 
-we are no longer located in
-our home directory. Let's enter the directory we have just created:
 ~~~
 $ cd linux_workshop
 ~~~
@@ -255,11 +252,6 @@ $ pwd
 ~~~
 {: .bash}
 
-~~~
-/home/<your Palmetto username>/linux_workshop
-~~~
-{: .output}
-
 If you type `ls`, you won't see anything, because we have just created this directory and it is empty.
 
 To go back to your home directory, you need to go one level up on the directory tree. There is a shortcut in the shell to move up one directory level
@@ -270,22 +262,8 @@ $ cd ..
 ~~~
 {: .bash}
 
-`..` is a special directory name meaning
-"the directory containing this one",
-or more succinctly,
+`..` is a special directory name meaning "the directory containing this one", or more succinctly,
 the **parent** of the current directory.
-Sure enough,
-if we run `pwd` after running `cd ..`, we're back in your home directory:
-
-~~~
-$ pwd
-~~~
-{: .bash}
-
-~~~
-/home/<your Palmetto username>
-~~~
-{: .output}
 
 The special directory `..` doesn't usually show up when we run `ls`.  If we want 
 to display it, we can give `ls` the `-a` flag:
@@ -296,14 +274,12 @@ $ ls -F -a
 {: .bash}
 
 
-`-a` stands for "show all";
+`-a` stands for "show all", including hidden files/folders;
 it forces `ls` to show us file and directory names that begin with `.`,
 such as `..` (which in our case is the `/home` directory).
-As you can see,
-it also displays another special directory that's just called `.`,
+As you can see, it also displays another special directory that's just called `.`,
 which means "the current working directory".
-It may seem redundant to have a name for it,
-but we'll see some uses for it soon.
+It may seem redundant to have a name for it, but we'll see some uses for it soon.
 
 > ## Other Hidden Files
 > 
@@ -335,32 +311,12 @@ $ pwd
 {: .bash}
 
 ~~~
-/home/<your Palmetto username>
+/users/<your SuperPOD username>
 ~~~
 {: .output}
 
 It turns out that `cd` without an argument will return you to your home directory, 
 which is great if you've gotten lost in your own filesystem.  
-
-Let's try returning to the `linux_workshop` directory from before.  We can actually string together the list of directories 
-to move to `linux_workshop` in one step: 
-
-~~~
-$ cd /home/<your Palmetto username>/linux_workshop
-~~~
-{: .bash}
-
-Check that we've moved to the right place by running `pwd`.  
-
-This is probably a good time to mention a couple of things which make Bash a convenient shell. The first one is *tab completion*. Most of the times, you don't need to type in the full name of the folders; you can to type the first few characters and press the TAB key. If there are files or folders that match the pattern you have entered, it will be completed for you. Let's go to the home directory, then type `cd linu` and press TAB instead of ENTER, and see what happens:
-
-~~~
-$ cd 
-$ cd linu
-~~~
-{: .bash}
-The shell should automatically complete `linu` to `linux_workshop`. The second useful feature is the *command history*. If you press the UP &uarr; or DOWN &darr; arrow keys, you can go through the previously typed commands. Try it. 
-
 
 If we want to move up one level from the shell directory, we could use `cd ..`.  But 
 there is another way to move to any directory, regardless of your 
@@ -387,9 +343,8 @@ to move to `linux_workshop`.
 > ## Two More Shortcuts
 >
 > The shell interprets the character `~` (tilde) at the start of a path to
-> mean "the current user's home directory". For example, `~/linux_workshop` is equivalent to
-> `/home/<your Palmetto username>/linux_workshop`. This only works if it is the first character in the
-> path: `here/there/~/elsewhere` is *not* `here/there/Users/nelle/elsewhere`. 
+> mean "the current user's home directory". For example, `~/shell-lesson-data` is equivalent to
+> `/users/<your SuperPOD username>/shell-lesson-data`.
 > 
 > Another shortcut is the `-` (dash) character.  `cd` will translate `-` into
 > *the previous directory I was in*, which is faster than having to remember, 
