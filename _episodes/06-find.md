@@ -60,10 +60,15 @@ Today it is not working
 ~~~
 
 Here, `not` is the pattern we're searching for.
-It's pretty simple:
-every alphanumeric character matches against itself.
+It's pretty simple: every alphanumeric character matches against itself.
 After the pattern comes the name or names of the files we're searching in.
 The output is the three lines in the file that contain the letters "not".
+
+We can write the output to other file:
+
+```
+grep not haiku.txt > Not_in_haiku.txt
+```
 
 Let's try a different pattern: "day".
 
