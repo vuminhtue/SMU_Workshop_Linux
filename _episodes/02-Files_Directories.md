@@ -32,7 +32,7 @@ and directories (also called "folders"),
 which hold files or other directories.
 
 Several commands are frequently used to create, inspect, rename, and delete files and directories.
-The first command that we will look at is called `pwd` (print working directory). Let's type it in:
+The first command that we will look at is called `pwd` (**print working directory**). Let's type it in:
 
 ~~~
 $ pwd
