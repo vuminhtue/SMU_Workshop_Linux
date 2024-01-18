@@ -25,7 +25,7 @@ $ cd shell-lesson-data
 $ find -name haiku*
 # Find all files with prefix haiku
 ```
-##
+
 ~~~
 $ cd ~/shell-lesson-data/exercise-data/writing
 $ nano haiku.txt
@@ -44,6 +44,8 @@ Yesterday it worked
 Today it is not working
 Software is like that.
 ~~~
+
+## Get the content from file using `grep`
 
 Let's find lines that contain the word "not":
 
