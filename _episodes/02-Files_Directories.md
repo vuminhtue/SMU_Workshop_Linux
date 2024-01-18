@@ -37,12 +37,6 @@ The first command that we will look at is called `pwd` (**print working director
 ~~~
 $ pwd
 ~~~
-{: .bash}
-
-~~~
-/home/<your Palmetto username>
-~~~
-{: .output}
 
 To understand what a "home directory" is,
 let's have a look at how the file system as a whole is organized.  
