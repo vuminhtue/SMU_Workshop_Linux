@@ -28,28 +28,31 @@ The part of the operating system responsible for managing files and directories
 is called the **file system**. It organizes our data into files, which hold information,
 and directories (also called "folders"), which hold files or other directories.
 
-Several commands are frequently used to create, inspect, rename, and delete files and directories.
 The first command that we will look at is called `pwd` (**print working directory**). Let's type it in your VSCode Terminal once logged in:
 
 ~~~
 $ pwd
 ~~~
 
+Now let's download the sample data from [here](https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip) using **wget** command:
 
-> ## Slashes
->
-> Notice that there are two meanings for the `/` character.
-> When it appears at the front of a file or directory name,
-> it refers to the root directory. When it appears *inside* a name,
-> it's just a separator.
-{: .callout}
+```
+$ wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
+```
 
-Underneath `/home`,
-we find one directory for each user with an account on Palmetto. 
+Once downloaded the zip file to your home directory on SuperPOD, you can unzip it using command **unzip**:
 
-Now let's learn the command that will let us see the contents of our 
-own filesystem.  We can see what's in our home directory by running `ls`,
-which stands for "listing":
+```
+unzip shell-lesson-data.zip
+```
+
+Now let change the current prompt into the folder that just unzipped using **cd** command:
+
+```
+cd shell-lesson-data
+```
+
+We can see what's in our home directory by running command **ls**, which stands for "listing":
 
 ~~~
 $ ls
