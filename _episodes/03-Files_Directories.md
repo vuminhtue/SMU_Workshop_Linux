@@ -43,36 +43,29 @@ $ wget https://swcarpentry.github.io/shell-novice/data/shell-lesson-data.zip
 Once downloaded the zip file to your home directory on SuperPOD, you can unzip it using command **unzip**:
 
 ```
-unzip shell-lesson-data.zip
+$ unzip shell-lesson-data.zip
+```
+
+We can see what's in our the downloaded directory by running command **ls**, which stands for "listing":
+
+~~~
+$ ls shell-lesson-data
+~~~
+Tips: you can try the feature called **Auto completion** in linux using **Tab** button by typying:
+
+```
+$ ls sh (tab)
 ```
 
 Now let change the current prompt into the folder that just unzipped using **cd** command:
 
 ```
-cd shell-lesson-data
+$ cd shell-lesson-data
 ```
 
-We can see what's in our home directory by running command **ls**, which stands for "listing":
-
-~~~
-$ ls
-~~~
-{: .bash}
-
-~~~
-Applications Documents    Library      Music        Public
-Desktop      Downloads    Movies       Pictures
-~~~
-{: .output}
-
-Your results might be completely different, depending on the ontents of your home directory. In fact, if you are just starting to use Palmetto, your home directory might be empty.
-
-
-`ls` prints the names of the files and directories in the current directory in 
-alphabetical order,
-arranged neatly into columns.
-We can make its output more comprehensible by using the **flag** `-F`,
-which tells `ls` to add a trailing `/` to the names of directories:
+`ls` prints the names of the files and directories in the current directory in alphabetical order,
+arranged neatly into columns. 
+We can make its output more comprehensible by using the **flag** `-F`, which tells `ls` to add a trailing `/` to the names of directories:
 
 ~~~
 $ ls -F
@@ -86,9 +79,7 @@ Desktop/      Downloads/    Movies/       Pictures/
 {: .output}
 
 And note that there is a space between `ls` and `-F`:
-without it,
-the shell thinks we're trying to run a command called `ls-F`,
-which doesn't exist.
+without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
 
 `ls` has lots of other options. To find out what they are, we can type:
 
