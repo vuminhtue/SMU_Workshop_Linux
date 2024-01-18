@@ -10,7 +10,8 @@ objectives:
 ---
 ## What is UNIX/Linux?
 
-![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/422e66c1-8827-42e1-8ce0-093c29c9e78c)
+![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/9a07f627-6557-45f8-a3f8-e003dc26136e)
+
 
 UNIX is an operating system which was first developed in the 1960s, and has been under constant development ever since. By operating system, we mean the suite of programs which make the computer work. It is a stable, multi-user, multi-tasking system for servers, desktops and laptops.
 
