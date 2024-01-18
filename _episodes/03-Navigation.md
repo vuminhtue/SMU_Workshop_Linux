@@ -24,9 +24,14 @@ keypoints:
 - "'..' means 'the directory above the current one'; '.' on its own means 'the current directory'."
 ---
 
+
 The part of the operating system responsible for managing files and directories
 is called the **file system**. It organizes our data into files, which hold information,
 and directories (also called "folders"), which hold files or other directories.
+
+You need to be able to navigate without a Graphical User Interface (GUI). Unix file systems are trees with the roots at the top:
+
+![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/fa2cb24d-750b-42e2-a9ec-957362281d00)
 
 The first command that we will look at is called `pwd` (**print working directory**). Let's type it in your VSCode Terminal once logged in:
 
@@ -72,14 +77,17 @@ $ ls -F
 ~~~
 {: .bash}
 
-~~~
-Applications/ Documents/    Library/      Music/        Public/
-Desktop/      Downloads/    Movies/       Pictures/
-~~~
-{: .output}
-
 And note that there is a space between `ls` and `-F`:
 without it, the shell thinks we're trying to run a command called `ls-F`, which doesn't exist.
+
+Now let try **ls -l** stands for long listing, we check the content of the folder named **exercise-data**:
+
+```
+$ ls -l exercise-data/
+```
+
+![image](https://github.com/vuminhtue/SMU_Workshop_Linux/assets/43855029/622f51f5-18c3-441a-a4d2-175da8365227)
+
 
 `ls` has lots of other options. To find out what they are, we can type:
 
@@ -87,12 +95,14 @@ without it, the shell thinks we're trying to run a command called `ls-F`, which 
 $ ls --help
 ~~~
 
-Many Linux commands, and programs that people have written that can be run from within the shell, support a `--help` flag to display more information on how to use the commands or programs.
-
 For more information on how to use `ls` we can type `man ls`.
 `man` is the Unix "manual" command:
 it prints a description of a command and its options,
 and (if you're lucky) provides a few examples of how to use it.
+
+```
+$ man ls
+```
 
 To navigate through the `man` pages,
 you may use the up and down arrow keys to move line-by-line,
