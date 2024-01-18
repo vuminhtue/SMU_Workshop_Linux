@@ -47,7 +47,6 @@ We can print out the contents of these files using the `cat` command. Let's prin
 ~~~
 $ cat methane.pdb
 ~~~
-{: .bash}
 
 ~~~
 COMPND      METHANE
@@ -60,19 +59,17 @@ ATOM      5  H           1      -0.771  -0.727   0.000  1.00  0.00
 TER       6              1
 END
 ~~~
-{: .output}
+
 
 Now, I would like to introduce you to a command that could be very useful: `wc`, which stands for "word count" and counts the number of lines, words, and characters in files. Let's apply it to `methane.pdb` and see what we get:
 
 ~~~
 $ wc methane.pdb
 ~~~
-{: .bash}
 
 ~~~
   9  57 422 methane.pdb
 ~~~
-{: .output}
 
 So, the file `methane.pdb` has 9 lines, 57 words, and 422 characters. Now, let's apply the `wc` command to all six files that have the `.pdb` extension. We can run `wc` command six times, but thankfully, there is a way to do it with a single use of the `wc` command using the very useful feature of Linux called *wildcards*. Let me show you how it works:
 
