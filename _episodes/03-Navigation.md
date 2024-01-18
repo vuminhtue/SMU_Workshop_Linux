@@ -1,5 +1,5 @@
 ---
-title: "Navigating Files and Directories"
+title: "Navigating"
 teaching: 15
 exercises: 0
 questions:
